@@ -1,0 +1,14 @@
+<!-- The 'Logout' Page -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Log Out
+{% endblock %}
+
+{% block main %}
+    <form action="/logout" method="post">
+        <p>Are you sure you want to log out?</p>
+        <button class="btn btn-primary" type="submit">Log Out</button>
+    </form>
+{% endblock %}

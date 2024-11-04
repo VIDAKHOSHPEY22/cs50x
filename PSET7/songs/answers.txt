@@ -1,0 +1,36 @@
+Spotify has taken an average of the energy and dance ability and valence of each person's top 100 songs and created their sound aura,
+ which means that if a song is in that range, that person likes it.
+  I think this way is a bit good but  maybe next to this code it is better that Spotify should consider the type of MBTI of each person and singer.
+    This also helps , the type of MBTI can have a relationship with the taste of the song, as well as well as the mood and emotions bcz
+    someone like me dosen't like energy just my mood with mood of singer
+    like NF , INTJ
+
+    like this
+    CREATE TABLE Singers (
+    SingerID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    MBTI VARCHAR(4)
+);
+
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    Name VARCHAR(n),
+    MBTI VARCHAR(n)
+);
+
+INSERT INTO Singers (SingerID, Name, MBTI)
+VALUES
+    (1, 'Singer1', 'INFP'),
+    (2, 'Singer2', 'INTJ'),
+    (3, 'Singer3', 'ENFJ');
+
+INSERT INTO Users (UserID, Name, MBTI)
+VALUES
+    (1, 'User1', 'ENFP'),
+    (2, 'User2', 'INTJ'),
+    (3, 'User3', 'INFP');
+
+SELECT s.Name AS SingerName, u.Name AS UserName
+FROM Singers s
+JOIN Users u ON s.MBTI = u.MBTI;
+

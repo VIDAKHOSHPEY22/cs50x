@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: bcz i think when you apply it in the reverse order , it has the worst possible timing
+
+sort2 uses: Merge Sort
+
+How do you know?: the best and min or shortest possible time
+
+sort3 uses: Selection Sort
+
+How do you know?: it is between the max time and min time

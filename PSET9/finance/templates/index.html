@@ -1,0 +1,45 @@
+<!-- 'Homepage' -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive-md">
+        <table class="table mx-auto w-50">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">No. of Shares</th>
+                    <th scope="col">Buying Price</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">STOCK VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in portfolio %}
+                    <tr class="table-light">
+                        <td>{{ stock["name"] }}</td>
+                        <td>{{ stock["symbol"] }}</td>
+                        <td>{{ stock["total_shares"] }}</td>
+                        <td>{{ stock["price"] | usd }}</td>
+                        <td>{{ stock["price"] | usd }}</td>
+                        <td>{{ stock["total_value"] | usd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="5">CASH LEFT</td>
+                    <td class="border-0 text-center">{{ cash | usd }}</td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="5">TOTAL</td>
+                    <td class="border-0 text-center">{{ total | usd }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

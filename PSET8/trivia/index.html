@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        //TODO:Add code to check answers to questions
+        function cc(correct, element) {
+            if (correct) {
+                document.getElementById(element).innerHTML = "Correct!";
+            } else {
+                document.getElementById(element).innerHTML = "Incorrect!";
+            }
+        }
+
+
+        function resetBtn() {
+            var btns = document.querySelectorAll(".button");
+            btns.forEach(function(btn) {
+                btn.classList.remove('incorrect');
+                btn.classList.remove('correct');
+            });
+        }
+
+
+        function answerGet(event) {
+            resetBtn();
+            if (event.target.id == "correct") {
+                event.target.classList.add('correct');
+                cc(true, "multiple_c");
+            } else {
+                event.target.classList.add('incorrect');
+                cc(false, "multiple_c");
+            }
+        }
+
+        //TODO: Function to free response check
+        function checkFreeResponse() {
+            var input = document.querySelector("input[type='text']").value;
+            var answer = "Chinese"; // Correct answer, change this to the actual correct answer
+            if (input.toLowerCase() === answer.toLowerCase()) {
+                cc(true, "free");
+            } else {
+                cc(false, "free");
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var btns = document.querySelectorAll(".button");
+            btns.forEach(function(btn) {
+                btn.addEventListener("click", answerGet);
+            });
+
+            var checkBtn = document.getElementById("Check");
+            checkBtn.addEventListener("click", checkFreeResponse);
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!--TODO:Add multiple choice question here -->
+            <h3>Which language is considered the most romantic?</h3>
+            <h2 id="multiple_c"></h2>
+            <button class="button">English</button>
+            <button id="correct" class="button">French</button>
+            <button class="button">Spanish</button>
+            <button class="button">Italian</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!--TODO:Add free response question here -->
+            <h3>Which language is the most difficult language?</h3>
+            <h2 id="free"></h2>
+            <input type="text">
+            <button id="Check" class="button">Check!</button>
+        </div>
+    </div>
+</body>
+</html>
