@@ -1,7 +1,5 @@
 # CS50x Harvard Projects
 
-![CS50x](https://cs50.harvard.edu/images/cs50x.png)
-
 ## Introduction
 
 Welcome to my CS50x Harvard projects repository! 🎓 I have successfully completed the CS50x course offered by Harvard University, which is an introduction to the intellectual enterprises of computer science and the art of programming.
@@ -47,7 +45,9 @@ I would like to thank the CS50x team and Harvard University for providing such a
 
 > "This is CS50."
 > and my name is Vida khoshpey
+## License
 
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 ---
 
 Thank you for visiting my repository! Happy coding! 😊
