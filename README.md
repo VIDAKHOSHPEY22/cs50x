@@ -1,3 +1,4 @@
+<!--that's 😎 for Harvard -->
 # CS50x Harvard Projects
 
 ## Introduction
